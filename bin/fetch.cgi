@@ -1,0 +1,11 @@
+#!/bin/bash -ex
+source "$(dirname $0)/conf"
+[ -n "${CONTENT_LENGTH}" ] && dd bs=${CONTENT_LENGTH} > /dev/null
+
+echo -e 'Content-type: text/html\n\n'
+
+echo "test"
+
+cd "$contentsdir"
+git pull
+

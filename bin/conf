@@ -1,5 +1,5 @@
-contents="bashcms2_contents"
-contentes_owner="hirofumimurai"
+contents="docker_contents"
+contents_owner="hirofumimurai"
 wwwdir="/var/www"
 contentsdir="$wwwdir/$contents"
 appdir="$wwwdir/bashcms2"
