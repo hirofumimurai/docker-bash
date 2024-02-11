@@ -9,6 +9,8 @@ trap 'rm -f $tmp-*' EXIT
 ### VARIABLE
 tmp=/tmp/$$
 dir="$(echo ${QUERY_STRING} | tr -dc 'a-zA-Z0-9_=' | sed 's;=;s/;')"
+[ "$dir" = "post" ] && dir="$(cat $datadir/post_list | tail -n1 | awk '{print $3}')"
+[ "$dir" = "" ] && dir="$(cat $datadir/post_list | tail -n1 | awk '{print $3}')"
 md="$contentsdir/$dir/main.md"
 [ -f "$md" ]
 
